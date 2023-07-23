@@ -1,3 +1,4 @@
+[![GitHub repo size](https://img.shields.io/github/repo-size/TheNewThinkTank/scrape-and-notify?style=flat&logo=github&logoColor=whitesmoke&label=Repo%20Size)](https://github.com/TheNewThinkTank/scrape-and-notify/archive/refs/heads/main.zip)
 # scrape-and-notify
 
 <h1>Event notifications from DSKO (Dansk Selskab for Klinisk Onkologi)</h1><br>
