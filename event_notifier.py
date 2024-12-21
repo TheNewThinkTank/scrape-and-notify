@@ -1,7 +1,6 @@
-import getpass
-from pprint import pprint as pp
-import smtplib, ssl
 
+import getpass
+# from pprint import pprint as pp
 import requests
 from bs4 import BeautifulSoup
 
@@ -27,24 +26,25 @@ def scrape_url(url):
     return name_date_links
 
 
-def send_email(msg, sender_email, password, receiver_email):
-    port = 587  # For starttls
-    smtp_server = "smtp.gmail.com"
-    message = """\
-    Subject: See your coming events
+# TODO: use https://github.com/TheNewThinkTank/open-courier/blob/main/src/send_email.py
+# def send_email(msg, sender_email, password, receiver_email):
+#     port = 587  # For starttls
+#     smtp_server = "smtp.gmail.com"
+#     message = """\
+#     Subject: See your coming events
 
-    {}""".format(
-        msg
-    ).encode(
-        "utf-8"
-    )
-    context = ssl.create_default_context()
-    with smtplib.SMTP(smtp_server, port) as server:
-        server.ehlo()  # Can be omitted
-        server.starttls(context=context)
-        server.ehlo()  # Can be omitted
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message)
+#     {}""".format(
+#         msg
+#     ).encode(
+#         "utf-8"
+#     )
+#     context = ssl.create_default_context()
+#     with smtplib.SMTP(smtp_server, port) as server:
+#         server.ehlo()  # Can be omitted
+#         server.starttls(context=context)
+#         server.ehlo()  # Can be omitted
+#         server.login(sender_email, password)
+#         server.sendmail(sender_email, receiver_email, message)
 
 
 def main():
@@ -54,7 +54,7 @@ def main():
     sender_email = input("Type the sender-email and press enter:")
     password = getpass.getpass(prompt="Type your password and press enter:")
     receiver_email = input("Type the receiver-email and press enter:")
-    send_email(msg, sender_email, password, receiver_email)
+    # send_email(msg, sender_email, password, receiver_email)
 
 
 if __name__ == "__main__":
